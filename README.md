@@ -1,7 +1,7 @@
 # Security Code Reviewer — Fine-Tuned LLM + RAG Pipeline
 
 A domain-specialized AI that reviews source code for security vulnerabilities,
-identifies the **CWE** and **OWASP** category, and produces a corrected version —
+identifies the **CWE** and **OWASP** category, and produces a corrected version,
 grounded in an authoritative CWE knowledge base with **cited sources**.
 
 Built by fine-tuning a base LLM into a security specialist, deploying it locally,
@@ -14,7 +14,7 @@ is backed by a real reference.
 
 The project combines two complementary techniques:
 
-- **Fine-tuning** adapts a base model to *behave* like a security code reviewer —
+- **Fine-tuning** adapts a base model to *behave* like a security code reviewer,
   classifying vulnerabilities by CWE/OWASP and generating fixes in a consistent format.
 - **RAG** layers an authoritative CWE reference knowledge base on top, so answers
   include accurate descriptions and cite their sources at query time.
@@ -42,7 +42,7 @@ retrieved at query time).** A specialized assistant benefits from both.
 ## Dataset
 
 The model was fine-tuned on a code-security vulnerability dataset labeled with
-CWE IDs, OWASP categories, language, and a vulnerability flag — with a balanced
+CWE IDs, OWASP categories, language, and a vulnerability flag, with a balanced
 slice across 15 vulnerability classes plus safe samples.
 
 ![Dataset](screenshots/Training_data.png)
@@ -58,7 +58,7 @@ to a stable ~0.1-0.2 band, showing clean convergence.
 
 ---
 
-## Results — Base vs Fine-Tuned
+## Results: Base vs Fine-Tuned
 
 The same security questions, asked to the base model and the fine-tuned model.
 The base model is verbose and often mislabels the vulnerability; the fine-tuned
@@ -71,13 +71,13 @@ model gives concise, correctly-labeled assessments with working fixes.
 ## RAG Pipeline
 
 A LangFlow pipeline ingests a CWE knowledge base, embeds it (nomic-embed-text),
-stores it in FAISS, and answers queries using the **fine-tuned model** — grounding
+stores it in FAISS, and answers queries using the **fine-tuned model**, grounding
 each response in retrieved references.
 
 ![LangFlow pipeline canvas](screenshots/RAG_Pipeline.png)
 
-With RAG, each answer is grounded in the retrieved reference and cites its source —
-for example, linking to the relevant MITRE CWE entry.
+With RAG, each answer is grounded in the retrieved reference and cites its source.
+For example, linking to the relevant MITRE CWE entry.
 
 ![RAG answer with citation](screenshots/RAG_Response.png)
 
