@@ -1,4 +1,4 @@
-# Security Code Reviewer — Fine-Tuned LLM + RAG Pipeline
+# Security Code Reviewer: Fine-Tuned LLM + RAG Pipeline
 
 A domain-specialized AI that reviews source code for security vulnerabilities,
 identifies the **CWE** and **OWASP** category, and produces a corrected version,
